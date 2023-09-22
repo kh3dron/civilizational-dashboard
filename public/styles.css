@@ -1,0 +1,30 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Helvetica', monospace;
+}
+
+header {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+span {
+    color: red;
+}
