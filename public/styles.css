@@ -26,5 +26,9 @@ li {
 }
 
 span {
+    color: lime;
+}
+
+.pending {
     color: red;
 }

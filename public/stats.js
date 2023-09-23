@@ -23,12 +23,13 @@ function currentValFromSpeed(startTime, startValue, speedPerSecond) {
 // Functions with no API Calls
 
 function stat_kardashev_level() {
+    //https://www.nature.com/articles/s41598-023-38351-y
     startTime = new Date("2023-07-12");
     startValue = 0.7276;
     endTime = new Date("2060-1-1");
     endValue = 0.7449;
     val = currentValFromBounds(startTime, startValue, endTime, endValue)
-    return val.toFixed(11);
+    return val.toFixed(10);
 }
 
 function stat_population_earth() {
@@ -69,26 +70,37 @@ async function get_humansOffEarth() {
       }
 }
 get_humansOffEarth().then((numberOfAstronauts) => {
-    document.getElementById("statD").innerText = numberOfAstronauts;
+    document.getElementById("stat_humansOffEarth").innerText = numberOfAstronauts;
 }
 );
+
+function stat_top500_flops() {
+    return 5239024665799999040258048n.toLocaleString();
+}
+
+function stat_top500_power() {
+    return 341029400n.toLocaleString();
+}
 
 function getRandomValue() {
     return Math.floor(Math.random() * 6) + 1;
 }
 
+function pending(){
+    return "Pending";
+}
+
 function updateInternals() {
-    document.getElementById("statA").innerText = stat_kardashev_level();
-    document.getElementById("statB").innerText = stat_population_earth().toLocaleString();
-    document.getElementById("statC").innerText = stat_voyaver1_distance().toLocaleString();
+    document.getElementById("stat_kardashev").innerText = stat_kardashev_level();
+    document.getElementById("stat_population").innerText = stat_population_earth().toLocaleString();
+    document.getElementById("stat_furthest").innerText = stat_voyaver1_distance().toLocaleString();
+    
+    document.getElementById("stat_top500_flops").innerText = stat_top500_flops();
+    document.getElementById("stat_top500_power").innerText = stat_top500_power();
+    
+    document.getElementById("pending").innerText = pending();
 }
 setInterval(updateInternals, 1000);
 
-// data that comes from APIs that I don't want to get rate limited on
-function updateExternals(){
-    document.getElementById("statD").innerText = stat_humansOffEarth();
-}
-
 
 updateInternals();
-updateExternals();
