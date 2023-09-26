@@ -14,38 +14,67 @@
     </header>
     <div class="container">
         <h2>ENERGY</h2>
-        <ul id="stats-list">
-            <li>Kardashev Level: <span id="stat_kardashev"></span></li>
+        <ul class="stats-list">
+            <li>
+                <span class="label">Kardashev Level:</span>
+                <span class="value" id="stat_kardashev"></span>
+            </li>
         </ul>
         <br>
     </div>
 
     <div class="container">
         <h2>POPULATION</h2>
-        <ul id="stats-list">
-            <li>Earth Population: <span id="stat_population"></span></li>
+        <ul class="stats-list">
+            <li>
+                <span class="label">Human Population:</span>
+                <span class="value" id="stat_population"></span>
+            </li>
         </ul>
         <br>
     </div>
 
     <div class="container">
         <h2>SPACE</h2>
-        <ul id="stats-list">
-            <li>Humans living off-earth: <span id="stat_humansOffEarth"></span></li>
-            <li>Furthest Manmade Object from Earth (Meters): <span id="stat_furthest"></span></li>
+        <ul class="stats-list">
+            <li>
+                <span class="label">Humans currently living off-earth:</span>
+                <span class="value" id="stat_humansOffEarth"></span>
+            </li>
+            <li>
+                <span class="label">Furthest Manmade Object from Earth (Meters):</span>
+                <span class="value" id="stat_furthest"></span>
+            </li>
         </ul>
         <br>
     </div>
 
     <div class="container">
         <h2>COMPUTATION</h2>
-        <ul id="stats-list">
-            <li>Top500 Compute (FLOP/s): <span id="stat_top500_flops"></span></li>
-            <li>Top500 Power Draw (Watts): <span id="stat_top500_power"></span></li>
+        <ul class="stats-list">
+            <li>
+                <span class="label">Top500 Combined Compute (FLOP/s):</span>
+                <span class="value" id="stat_top500_flops"></span>
+            </li>
+            <li>
+                <span class="label">Top500 Combined Compute (EFLOP/s):</span>
+                <span class="value" id="stat_top500_eflops"></span>
+            </li>
+            <li>
+                <span class="label">Top500 Combined Power Draw (Watts):</span>
+                <span class="value" id="stat_top500_power"></span>
+            </li>
+            <li>
+                <span class="label">Size of all data connected to the internet (Bits):</span>
+                <span class="value" id="stat_internet_bits"></span>
+            </li>
+            <li>
+                <span class="label">Size of all data connected to the internet (Terrabytes):</span>
+                <span class="value" id="stat_internet_terrabytes"></span>
+            </li>
         </ul>
         <br>
     </div>
-    
 
     <script src="stats.js"></script>
 </body>

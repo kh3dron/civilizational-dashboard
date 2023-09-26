@@ -1,3 +1,27 @@
+/* Add this CSS to your existing styles.css file */
+
+/* Adjust styling for the label and value */
+.stats-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center label and value */
+    margin-bottom: 10px;
+    /*underline*/
+    border-bottom: 1px solid gray;
+}
+
+.label {
+    color: gray;
+    width: 50%; /* Adjust the width to your preference */
+}
+
+.value {
+    color: lime;
+    width: 50%; /* Adjust the width to your preference */
+    text-align: right;
+}
+
+/* Rest of your existing CSS styles */
 body {
     background-color: black;
     color: white;
@@ -23,12 +47,4 @@ ul {
 
 li {
     margin: 10px 0;
-}
-
-span {
-    color: lime;
-}
-
-.pending {
-    color: red;
 }
