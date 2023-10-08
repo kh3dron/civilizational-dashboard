@@ -105,7 +105,13 @@ function stat_internet_terrabytes(){
     return Math.round(val);
 }
 
-
+function stat_global_gdp(){
+    startDate = new Date("2023-01-01");
+    startSize = 100000000000000;
+    endDate = new Date("2024-01-01");
+    endSize = 105000000000000;
+    return Math.round(currentValFromBounds(startDate, startSize, endDate, endSize));
+}
 
 function getRandomValue() {
     return Math.floor(Math.random() * 6) + 1;
@@ -122,6 +128,8 @@ function updateInternals() {
     document.getElementById("stat_top500_power").innerText = stat_top500_power();
     document.getElementById("stat_internet_bits").innerText = stat_internet_bits().toLocaleString();
     document.getElementById("stat_internet_terrabytes").innerText = stat_internet_terrabytes().toLocaleString();
+    
+    document.getElementById("stat_global_gdp").innerText = stat_global_gdp().toLocaleString();
 }
 setInterval(updateInternals, 10);
 
