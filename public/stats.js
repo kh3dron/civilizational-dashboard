@@ -20,8 +20,7 @@ function currentValFromSpeed(startTime, startValue, speedPerSecond) {
     return startValue + valueElapsed;
 }
 
-// Functions with no API Calls
-
+//ENERGY
 function stat_kardashev_level() {
     //https://www.nature.com/articles/s41598-023-38351-y
     startTime = new Date("2023-07-12");
@@ -32,6 +31,7 @@ function stat_kardashev_level() {
     return val.toFixed(12);
 }
 
+//POPULATION
 function stat_population_earth() {
     // https://www.worldometers.info/world-population/
     startTime = new Date("2023-07-1");
@@ -42,8 +42,19 @@ function stat_population_earth() {
     return val;
 }
 
-// https://en.wikipedia.org/wiki/Voyager_1
+function stat_life_expectancy() {
+    // https://www.macrotrends.net/countries/USA/united-states/life-expectancy
+    startTime = new Date("2023-01-1");
+    startValue = 79.11;
+    endTime = new Date("2100-01-1");
+    endValue = 88.78;
+    val = (currentValFromBounds(startTime, startValue, endTime, endValue))
+    return val.toFixed(9);
+}
+
+//SPACE
 function stat_voyaver1_distance() {
+    // https://en.wikipedia.org/wiki/Voyager_1
     startTime = new Date("2022-07-14");
     startValue = 23281000000;
     speedPerSecond = 17000;
@@ -51,7 +62,6 @@ function stat_voyaver1_distance() {
     return val;
 }
 
-// Functions with API Calls
 async function get_humansOffEarth() {
     try {
         const response = await fetch('http://api.open-notify.org/astros.json');
@@ -74,6 +84,7 @@ get_humansOffEarth().then((numberOfAstronauts) => {
 }
 );
 
+//COMPUTATION
 function stat_top500_flops() {
     return 5239024665799999040258048n.toLocaleString();
 }
@@ -105,6 +116,7 @@ function stat_internet_terrabytes(){
     return Math.round(val);
 }
 
+//FINANCE
 function stat_global_gdp(){
     startDate = new Date("2023-01-01");
     startSize = 100000000000000;
@@ -121,6 +133,7 @@ function getRandomValue() {
 function updateInternals() {
     document.getElementById("stat_kardashev").innerText = stat_kardashev_level();
     document.getElementById("stat_population").innerText = stat_population_earth().toLocaleString();
+    document.getElementById("stat_life_expectancy").innerText = stat_life_expectancy();
     document.getElementById("stat_furthest").innerText = stat_voyaver1_distance().toLocaleString();
     
     document.getElementById("stat_top500_flops").innerText = stat_top500_flops();
