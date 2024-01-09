@@ -1,5 +1,0 @@
-- 0.1
-    - proof of life up
-- 0.2
-    - stats with API calls
-    - API calls refreshed on page load, not by second
