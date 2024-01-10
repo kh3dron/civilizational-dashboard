@@ -89,6 +89,12 @@ get_humansOffEarth().then((numberOfAstronauts) => {
 }
 );
 
+//TIME
+function stat_unix_time() {
+    return Math.round(Date.now()/1000);
+}
+
+
 //COMPUTATION
 function stat_top500_flops() {
     return 5239024665799999040258048n.toLocaleString();
@@ -138,6 +144,8 @@ function updateInternals() {
     document.getElementById("stat_life_expectancy").innerText = stat_life_expectancy();
     document.getElementById("stat_furthest").innerText = stat_voyaver1_distance().toLocaleString();
     
+    document.getElementById("stat_unix_time").innerText = stat_unix_time();
+
     document.getElementById("stat_top500_flops").innerText = stat_top500_flops();
     document.getElementById("stat_top500_eflops").innerText = stat_top500_eflops();
     document.getElementById("stat_top500_power").innerText = stat_top500_power();

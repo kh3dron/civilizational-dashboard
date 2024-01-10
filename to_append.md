@@ -1,6 +1,6 @@
 - [] Energy
   - [x] Kardashev Level
-  - [ ] watts produced, ltm
+  - [x] watts produced, ltm
 - [ ] Population
   - [x] Human Population
   - [x] Human Life Expectancy
@@ -18,7 +18,7 @@
 - [ ] Time
   - [ ] Age of universe, seconds
   - [ ] seconds since life emerged on earth
-  - [ ] current unix timestamp
+  - [x] current unix timestamp
 - [ ] Computation
   - [x] Top500 Combined Compute, flop/s
   - [x] Top500 Power Draw, watts
