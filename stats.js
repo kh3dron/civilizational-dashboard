@@ -1,11 +1,7 @@
+// HELPERS
+
 function currentValFromBounds(startTime, startValue, endTime, endValue) {
     var currentTime = Date.now();
-    if (currentTime < startTime) {
-        return startValue;
-    }
-    if (currentTime > endTime) {
-        return endValue;
-    }
     var timeElapsed = currentTime - startTime;
     var timeTotal = endTime - startTime;
     var fractionElapsed = timeElapsed / timeTotal;
@@ -29,6 +25,15 @@ function stat_kardashev_level() {
     endValue = 0.7449;
     val = currentValFromBounds(startTime, startValue, endTime, endValue)
     return val.toFixed(12);
+}
+
+function stat_wattage_ltm() {
+    // https://ourworldindata.org/energy-production-consumption
+    startTime = new Date("2022-01-01");
+    startValue = 2335*10e11;
+    endTime = new Date("2023-01-01");
+    endValue = 2414*10e11;
+    return Math.round(currentValFromBounds(startTime, startValue, endTime, endValue));
 }
 
 //POPULATION
@@ -125,14 +130,11 @@ function stat_global_gdp(){
     return Math.round(currentValFromBounds(startDate, startSize, endDate, endSize));
 }
 
-function getRandomValue() {
-    return Math.floor(Math.random() * 6) + 1;
-}
-
-
 function updateInternals() {
     document.getElementById("stat_kardashev").innerText = stat_kardashev_level();
+    document.getElementById("stat_wattage_ltm").innerText = stat_wattage_ltm().toLocaleString();
     document.getElementById("stat_population").innerText = stat_population_earth().toLocaleString();
+
     document.getElementById("stat_life_expectancy").innerText = stat_life_expectancy();
     document.getElementById("stat_furthest").innerText = stat_voyaver1_distance().toLocaleString();
     
